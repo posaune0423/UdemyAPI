@@ -42,7 +42,7 @@ $pool = new Pool($client, $requests($urlList), [
 	'fulfilled' => function ($response, $index) use ($urlList) {
 		$decode_res[] = json_decode($response->getBody()->getContents(), true);
 
-		// var_dump($decode_res);
+
 		$label = array(
 			'動画名',
 			'概要',
@@ -60,9 +60,6 @@ $pool = new Pool($client, $requests($urlList), [
 		$count = 0;
 
 		foreach ($decode_res as $v) {
-			// var_dump($v['title']);
-			// var_dump($v['visible_instructors'][0]['title']);
-			// var_dump(date('Y/n/j', strtotime($v['created'])));
 			$data = array(
 				array(
 					'title' => $v['title'],
@@ -79,7 +76,6 @@ $pool = new Pool($client, $requests($urlList), [
 				)
 			);
 
-			// var_dump($data[0]);
 			$count += 1;
 		}
 		$f = fopen('php://output', "w");
