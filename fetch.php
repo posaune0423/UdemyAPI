@@ -178,7 +178,7 @@ $promise->wait();
 
 $id_list = [];
 
-// var_dump($contents);
+
 foreach($contents as $v) {
   $decode_res[] = json_decode($v['html'], true);
 }
@@ -191,15 +191,11 @@ foreach($decode_res as $v) {
 
 foreach($results as $v) {
   foreach($v as $j) {
-    // var_dump($j['title']);
     $id_list[] = $j['id'];
   }
 }
 
 $_SESSION['id_list'] = $id_list;
-// var_dump($decode_res);
-
-
 
 ?>
 
