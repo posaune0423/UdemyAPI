@@ -141,7 +141,6 @@ foreach ($sub_category as $v) {
   $urlList[] = $base_url . '&subcategory=' . $v;
 }
 
-// var_dump($urlList);
 
 $requests = function ($urlList) use ($client) {
   foreach ($urlList as $url) {
